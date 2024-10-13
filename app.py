@@ -24,7 +24,7 @@ tfidf_vectorizer = TfidfVectorizer(stop_words=stop_words, max_features=10000, us
 tfidf_matrix = tfidf_vectorizer.fit_transform(corpus)
 
 # Apply SVD for dimensionality reduction
-n_components = int(os.getenv('SVD_COMPONENTS', 200))  # Increased number of components for better accuracy
+n_components = int(os.getenv('SVD_COMPONENTS', 110))  # Increased number of components for better accuracy
 if n_components > tfidf_matrix.shape[1]:
     raise ValueError("n_components must be less than or equal to the number of features ({}).".format(tfidf_matrix.shape[1]))
 svd = TruncatedSVD(n_components=n_components)
