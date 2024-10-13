@@ -50,7 +50,7 @@ def search():
     for idx in top_indices:
         result = {
             'title': f"Document {idx + 1}",
-            'snippet': corpus[idx][:200],  # Show the first 200 characters as a snippet
+            'snippet': corpus[idx][:700],  # Show the first 200 characters as a snippet
             'similarity': float(similarities[0, idx])
         }
         results.append(result)
