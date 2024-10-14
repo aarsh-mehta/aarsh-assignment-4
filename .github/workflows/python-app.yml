@@ -26,8 +26,11 @@ jobs:
 
     - name: Run application
       run: |
-        make run &
-        sleep 10
+        make run > server.log 2>&1 &
+        sleep 20  # Increased sleep time
+
+    - name: Display server logs
+      run: cat server.log
 
     - name: Test server response
       run: |
